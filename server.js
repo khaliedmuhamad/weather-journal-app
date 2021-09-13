@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData = {};
 
 // Require Express to run server and routes
 const express = require("express");
@@ -27,14 +27,15 @@ const server = app.listen(port,listening);
 // post to app
 const data = []
 app.post('/idea',(req,res) =>{
-    console.log("post func",req.body)
-    data.push(req.body)
+    projectData = req.body;
+    //console.log("post func",projectData)
+    data.push(projectData)
 });
 //same url in post client side
 
 //get data from db
 
 app.get('/idea',(req,res) =>{
-    console.log(data)
-    res.send(data);
+    console.log(projectData)
+    res.send(projectData);
 });

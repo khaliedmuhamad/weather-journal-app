@@ -72,17 +72,15 @@ btt.addEventListener('click',async (e) =>{
         temperture:data,
         feeling:feelingInput
     })}).then(getData).then(data =>{ 
-        
-         data.map((el) => {  
+        console.log(data)
             infocontainer.innerHTML = `
             <div id = "container">
-            <div id = "zip">zip code:🌍 ${el.zip}</div> 
-            <div id = "date">date:📅 ${el.date}</div> 
-            <div id = "temp">temperture:🥵 ${el.temperture}</div>
-            <div id = "content">feel:🎃 ${el.feeling}</div>
+            <div id = "zip">zip code:🌍 ${data.zip}</div> 
+            <div id = "date">date:📅 ${data.date}</div> 
+            <div id = "temp">temperture:🥵 ${data.temperture} C</div>
+            <div id = "content">feel:🎃 ${data.feeling}</div>
             </div>
             `
-        });
  })
                                                                                                      
 }});
